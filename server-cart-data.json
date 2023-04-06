@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "hhhhhhhhhhhhhhhhhhhhhhhhhh",
+    "description": "Lightweight, breathable hoodie with the Fullstack Crest. Guaranteed to keep you looking fresh while warm.",
+    "price": 19.99,
+    "quantity": 2
+  },
+  {
+    "id": 40,
+    "title": "MAROUANE",
+    "description": "Adding a new cart item",
+    "price": 99,
+    "quantity": 1
+  }
+]
