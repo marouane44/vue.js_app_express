@@ -23,8 +23,27 @@ const actions = {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
+  removeAllCartItems({ commit }) {
+    axios.post("/api/cart/delete/all").then((response) => {
+      commit("UPDATE_CART_ITEMS", response.data);
+    });
+  },
 };
-const getters = {};
+const getters = {
+  cartItems: (state) => state.cartItems,
+  cartTotal: (state) => {
+    return state.cartItems
+      .reduce((acc, cartItem) => {
+        return cartItem.quantity * cartItem.price + acc;
+      }, 0)
+      .toFixed(2);
+  },
+  cartQuantity: (state) => {
+    return state.cartItems.reduce((acc, cartItem) => {
+      return cartItem.quantity + acc;
+    }, 0);
+  },
+};
 const cartModule = {
   state,
   mutations,
